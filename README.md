@@ -161,8 +161,13 @@ Modern UI Includes:
 
 Add your screenshots here:
 
+### 🖼 App Preview
 ![App Preview](screenshots/home.png)
+
+### 🔍 Search Results
 ![Search Results](screenshots/results.png)
+
+### ⭐ Collections Page
 ![Collections](screenshots/collection.png)
 
 ---
