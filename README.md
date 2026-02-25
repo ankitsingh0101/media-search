@@ -161,11 +161,9 @@ Modern UI Includes:
 
 Add your screenshots here:
 
-```
 ![App Preview](screenshots/home.png)
 ![Search Results](screenshots/results.png)
 ![Collections](screenshots/collection.png)
-```
 
 ---
 
