@@ -142,10 +142,11 @@ localStorage
 Using TailwindCSS + Custom Colors:
 
 ```
---c1: rgb(69, 23, 75);
---c2: rgb(125, 51, 152);
---c3: rgb(29, 84, 108);
---c4: rgb(244, 244, 244);
+--c1:rgb(7, 35, 67);
+--c2:rgb(20, 65, 117);
+--c3:rgb(29, 84, 108);
+--c4:rgb(244, 244, 244);
+
 ```
 
 Modern UI Includes:
