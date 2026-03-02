@@ -28,82 +28,43 @@ const ResultCard = ({ item }) => {
     }
 
     return (
-        <div className="w-full xs:w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
-            <div className="bg-white rounded-xl overflow-hidden relative group">
+        <div className="w-full p-2">
+    <div className="bg-white rounded-xl overflow-hidden relative">
 
-                {/* MEDIA */}
-                <a target="_blank" href={item.url}>
-                    {item.type === "photo" && (
-                        <img
-                            src={item.src}
-                            className="w-full h-auto object-cover"
-                            alt=""
-                        />
-                    )}
-
-                    {item.type === "video" && (
-                        <video
-                            src={item.src}
-                            autoPlay
-                            loop
-                            muted
-                            className="w-full h-auto object-cover"
-                        />
-                    )}
-
-                    {item.type === "gif" && (
-                        <img
-                            src={item.src}
-                            className="w-full h-auto object-cover"
-                            alt=""
-                        />
-                    )}
-                </a>
-
-                {/* TITLE + BUTTONS */}
-                <div className="flex justify-between items-center gap-3 w-full px-4 py-4 absolute bottom-0 text-white bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all">
-
-                    <h2 className="text-base font-semibold capitalize overflow-hidden max-w-[70%]">
-                        {item.title}
-                    </h2>
-
-                    <div className="flex gap-2">
-
-                        {/* SAVE BUTTON */}
-                        <button
-                            onClick={() => addToCollection(item)}
-                            className="bg-indigo-600 active:scale-95 text-white rounded px-3 py-1 cursor-pointer font-medium"
-                        >
-                            Save
-                        </button>
-
-                        {/* DOWNLOAD BUTTON */}
-                        <button
-                            onClick={() =>
-                                downloadMedia(item.src, `${item.title || "media"}.jpg`)
-                            }
-                            className="bg-green-600 active:scale-95 text-white rounded px-3 py-1 cursor-pointer font-medium flex items-center justify-center"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={2}
-                                stroke="currentColor"
-                                className="w-5 h-5"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M7.5 11.25L12 15.75m0 0l4.5-4.5M12 15.75V3"
-                                />
-                            </svg>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
+        {/* IMAGE */}
+        <div className="w-full h-64 sm:h-72 md:h-80 overflow-hidden">
+            <a target="_blank" href={item.url}>
+                <img
+                    src={item.thumbnail}
+                    className="w-full h-full object-cover"
+                />
+            </a>
         </div>
+
+        {/* OVERLAY BUTTONS */}
+        <div className="absolute bottom-0 left-0 w-full 
+                        flex justify-between items-center 
+                        px-4 py-3 
+                        bg-black/40 backdrop-blur-sm 
+                        text-white">
+
+            <button
+                onClick={() => addToCollection(item)}
+                className="bg-indigo-600 active:scale-95 text-white rounded px-3 py-1 text-sm"
+            >
+                Save
+            </button>
+
+            <button
+                onClick={() => downloadMedia(item.src, `${item.title || "media"}.jpg`)}
+                className="bg-blue-600 active:scale-95 text-white rounded px-3 py-1 text-sm"
+            >
+                ⬇
+            </button>
+        </div>
+
+    </div>
+</div>
     )
 }
 
